@@ -5,8 +5,9 @@ class toDo{
         this.statut = statut
     }
     // Récupère notre Todo
-    getTodo(todo){
-        console.log(todo.content)
+    getTodo(todos){
+        const todo = JSON.parse(todos)
+
         if (todo.statut){
             console.log(newTodo.content)
             return `<ul>${todo.content}<input type="checkbox" id="todoTrue" checked></input id="delTodo><button id="delTodo">Suprimer</button></ul>`
@@ -45,7 +46,7 @@ bTodo.addEventListener("click", () => {
         content : newTodo.getContent(),
         statut : newTodo.getStatut()
     }
-    localStorage.setItem('todo', ourTodo)
+    localStorage.setItem('todo', JSON.stringify(ourTodo))
     const listTodo = document.querySelector('#todoList')
     
     listTodo.innerHTML = listTodo.innerHTML + newTodo.getTodo(localStorage.getItem('todo'))
