@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <input type="button" id="search"></input>
+        <div id=""></div>
+        <script>
+            class toDo{
+                constructor(content, statut){
+                    this.content = content
+                    this.statut = statut
+                }
+                getTodo(){
+                    if (this.statut){
+                        return `<li><div style ="text-color : green">${this.statut}</div></li>`
+                    }else{
+                        return `<li><div style ="text-color : red">${this.statut}</div></li>`
+                    }
+                    
+                }
+            }
+        </script>
+    </body>
+</html>
+
