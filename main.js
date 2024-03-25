@@ -37,6 +37,12 @@ class toDo{
 //         delButton.parentElement.innerHTML = ""
 //     }))
 // })
+function affTodo(todos){
+    const todo = JSON.parse(todos)
+    const listTodo = document.querySelector('#todoList')
+    listTodo.innerHTML = listTodo.innerHTML + `<ul>${todo.content}<input type="checkbox" id="todoTrue" checked></input id="delTodo><button id="delTodo">Suprimer</button></ul>`
+
+}
 
 const bTodo = document.querySelector('#createTodo')
 bTodo.addEventListener("click", () => {
@@ -56,3 +62,4 @@ bTodo.addEventListener("click", () => {
         localStorage.removeItem('todo')
     }))
 })
+affTodo(localStorage.getItem('todo'))
